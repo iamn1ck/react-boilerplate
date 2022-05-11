@@ -3,14 +3,7 @@ import { Box, styled } from "@mui/system";
 import { FC } from "react";
 import { useTheme } from "../context/ThemeProvider";
 import PaletteChanger from "./Layout/PaletteChanger";
-
-const Wrapper = styled(Box)`
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-`;
+import styles from "./main.module.css";
 
 const Container = styled(Box)`
   display: flex;
@@ -40,8 +33,8 @@ const Layout: FC = () => {
   const { setDirection, direction } = useTheme();
 
   return (
-    <Wrapper>
-      <Container>
+    <Box className={styles.box}>
+      <Box className={styles.container}>
         <ButtonsWrapper>
           <DirectionButton
             variant="contained"
@@ -68,8 +61,8 @@ const Layout: FC = () => {
             <Typography>{`----------->`}</Typography>
           </Box>
         </ContentWrapper>
-      </Container>
-    </Wrapper>
+      </Box>
+    </Box>
   );
 };
 
